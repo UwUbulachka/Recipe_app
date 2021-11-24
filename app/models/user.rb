@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   before_save :downcase_email
+  mount_uploader :avatar, AvatarUploader
   validates :name, presence: true, length: {maximum: 50} 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255},
@@ -7,6 +8,7 @@ class User < ApplicationRecord
 								    uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}
+
 
 private  
 
