@@ -1,17 +1,15 @@
-
-
 /* навигация */
 
 .logo img {
-    height: 50px;
-    width: auto;
+  height: 50px;
+  width: auto;
 }
 
 .logo {
-    margin-left: 150px;
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-    height: 45px;
+  margin-left: 150px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  height: 45px;
 }
 
 .indent {
@@ -26,7 +24,22 @@
 li:hover {color: black;}
 
 
+.indent4 {
+    margin-left: 700px;
 
+}
+
+.a1 {
+    color: black;
+    text-decoration: none;
+}
+
+.a2:hover 
+{
+     color: #5f544e; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
 
 /* подвал */
 
@@ -58,21 +71,18 @@ footer {
 }
 
 .indent2 {
-    margin-left: 180px;
-    margin-right: 180px;
+  margin-left: 180px;
+  margin-right: 180px;
 }
-
-
 
 
 /* Show user*/
 
-.show {
-    margin-left: 180px;
-    margin-right: 180px;
-    margin-top:  20px;
+.show1 {
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-top:  20px;
 }
-
 
 
 /* Форма */
@@ -119,7 +129,20 @@ span.avatar {
   src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
 }
 
-/* Обшибки */
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:black; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+
+/* Ошибки */
 
 #error_explanation {
   color: black;
@@ -150,3 +173,20 @@ span.avatar {
 .avatar {
   border-radius: 50%;
 }
+
+
+/* Еще */
+
+.indent5 {
+  margin-left: 19%;
+}
+
+hr {
+  background-color: gray; 
+  height: 2px; 
+}
+
+.size6 {
+ margin-top: 10px;
+}
+
