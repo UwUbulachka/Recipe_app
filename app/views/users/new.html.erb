@@ -1,2 +1,33 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= provide(:title, "Sign up") %>
+<h1 class="size1 form">Sign up</h1>
+
+<div class="row size ">
+  <div class="col"></div>
+    <div class="col-md-6 ">
+      <%= form_for(@user, html: { multipart: true }) do |f|%>
+        
+       <%= render "shared/error_messages" %>
+
+        <%= f.label "Имя" %>
+        <%= f.text_field :name, class: "form-control" %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label "Пороль" %>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <%= f.label "Повторить пороль" %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+
+        <h1 class="size">Аватар</h1>
+          <span class="avatar">
+            <%= f.file_field :avatar %>
+          </span>
+
+      <%= f.submit "Создать аккаунт", class: "btn size", style: "background-color: #d4beb0;" %>
+    <% end %>
+  </div>
+  <div class="col"></div>
+</div>
+

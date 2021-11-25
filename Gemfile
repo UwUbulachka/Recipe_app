@@ -12,6 +12,8 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'mini_magick'
 
+gem 'rails-controller-testing'
+
 gem 'sqlite3', '~> 1.4', group: :development
 
 gem 'puma', '~> 5.0'
@@ -46,6 +48,7 @@ end
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'byebug'
   gem 'webdrivers'
   gem 'minitest-reporters'
   gem 'mini_backtrace'
