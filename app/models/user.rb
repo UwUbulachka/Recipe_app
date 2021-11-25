@@ -8,6 +8,7 @@ class User < ApplicationRecord
 								    uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}
+  validate :avatar_size
 
 
 private  
@@ -15,4 +16,14 @@ private
   def downcase_email
   	self.email = email.downcase 
   end
+
+  # Проверяет размер выгруженного изображения.
+  def avatar_size
+    if avatar.size > 5.megabytes
+      errors.add(:avatar, "должно быть меньше 5 МБ") 
+    end
+  end
 end
+
+
+
