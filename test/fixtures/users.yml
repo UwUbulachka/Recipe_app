@@ -1,0 +1,5 @@
+sasha:
+  name: Sasha
+  email: sasha@example.com
+  password_digest: <%= User.digest('password') %> 
+  avatar: 'kisa.png'
