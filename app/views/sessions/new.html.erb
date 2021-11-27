@@ -11,7 +11,11 @@
 
         <%= f.label "Пороль" %>
         <%= f.password_field :password, class: "form-control" %>
-
+        
+        <%= f.label :remember_me, class: "checkbox inline size2" do %>
+          <%= f.check_box :remember_me %>
+          <span>Запомнить меня</span>
+        <% end %>
       <%= f.submit "Войти", class: "btn size", style: "background-color: #d4beb0;" %>
 
       <p class="size2 ">Новый пользователь? <%= link_to "Зарегистрируйтесь!", signup_path, class: "a2 a1" %></p>

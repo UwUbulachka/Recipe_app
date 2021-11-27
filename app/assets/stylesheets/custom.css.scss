@@ -190,3 +190,16 @@ hr {
  margin-top: 10px;
 }
 
+/* формы */
+
+.checkbox {
+  margin-bottom: 7px;
+  span {
+    margin-left: 3px;
+    font-weight: normal;
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
