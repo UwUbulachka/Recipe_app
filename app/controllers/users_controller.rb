@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   # Подтверждает вход пользователя.
   def logged_in_user 
     unless logged_in?
+      store_location
       redirect_to login_url
       flash[:danger] = "Сначала осуществите вход" 
     end   
