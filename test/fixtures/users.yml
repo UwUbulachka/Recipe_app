@@ -3,3 +3,9 @@ sasha:
   email: sasha@example.com
   password_digest: <%= User.digest('password') %> 
   avatar: 'kisa.png'
+
+masha:
+  name: Masha
+  email: masha@example.com
+  password_digest: <%= User.digest('password') %> 
+  avatar: 'kit.png'
