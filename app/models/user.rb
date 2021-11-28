@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  
   attr_accessor :remember_token
   before_save :downcase_email
   mount_uploader :avatar, AvatarUploader
