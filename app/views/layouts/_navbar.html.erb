@@ -25,7 +25,7 @@
             Ещё
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li class="indent5"><%= link_to "Пользователи", '#' %></li>
+            <li class="indent5"><%= link_to "Пользователи", users_path %></li>
             <li class="indent5"><%= link_to "Избранное", '#' %></li>
             <li class="indent5"><%= link_to "Настройки", edit_user_path(current_user) %></li>
             <li class="indent5"><%= link_to "Выход", logout_path, method: "delete" %></li>
