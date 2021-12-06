@@ -1,14 +1,16 @@
 <% provide(:title, "Все пользователи")%>
-<h1 class="size1 form">Все пользователи</h1>
+<h1 class="size1 form1">Пользователи</h1>
 
 <div class="row size indent6">
   <div class="col"></div>
     <div class="col-md-6 ">
-    <%= will_paginate %>
     <ul>
       <% @users.each do |user|  %>
         <%= avatar_for user, 80%>
-        <%= user.name %><br/><hr/>
+        <%= link_to user.name, user, class: "a1" %>
+        <% if current_user.admin? && !current_user?(user)%>
+        | <%= link_to "удалить", user, method: :delete, data: {confirm: "Действительно удалить?"}  %>
+        <% end %><br/><hr/>
       <% end %>
     </ul>
     <%= will_paginate %>

@@ -2,7 +2,8 @@ User.create!(name: "Sasha Meuw",
 			 email: "sasha@example.com",
 			 password: "foobar",
 			 password_confirmation: "foobar",
-			 avatar: File.open(Rails.root.join('app', 'assets', 'images', 'kisa.jpg')))
+			 avatar: File.open(Rails.root.join('app', 'assets', 'images', 'kisa.jpg')),
+			 admin: true)
 
 User.create!(name: "Lilya Mur", 
 			 email: "lilya@example.com",
