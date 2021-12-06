@@ -4,7 +4,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   
   def setup
   	@user = users(:sasha)
-  	@oser = users(:masha)
+  	@other = users(:masha)
   end
 
   test "should redirect index when not logged in" do 
@@ -31,15 +31,30 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect edit when logged in as wrong user" do 
     log_in_as(@user)
-    get edit_user_path(@oser), params: {id: @user}
+    get edit_user_path(@other), params: {id: @user}
     assert flash.empty?
     assert_redirected_to root_url
   end
 
     test "should redirect update when logged in as wrong user" do 
-    log_in_as(@oser)
+    log_in_as(@other)
     patch user_path(@user), params: {id: @user, email: @user.email, avatar: @user.avatar}
     assert flash.empty?
     assert_redirected_to root_url
   end	
+
+  test "should redirect destroy when not logged in" do 
+    assert_no_difference 'User.count' do 
+      delete user_url(@user), params: {id: @user}
+    end 
+    assert_redirected_to login_url 
+  end  
+
+  test "should redirect destroy when logged in as a non-admin" do 
+  log_in_as(@other)
+  assert_no_difference 'User.count' do 
+    delete user_url(@other), params: {id: @other}
+  end 
+  assert_redirected_to root_url 
+  end 
 end
