@@ -4,12 +4,14 @@
 <div class="row size indent6">
   <div class="col"></div>
     <div class="col-md-6 ">
+    <%= will_paginate %>
     <ul>
       <% @users.each do |user|  %>
         <%= avatar_for user, 80%>
         <%= user.name %><br/><hr/>
       <% end %>
     </ul>
+    <%= will_paginate %>
   </div>
   <div class="col"></div>
 </div>

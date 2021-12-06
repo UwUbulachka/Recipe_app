@@ -10,6 +10,10 @@ gem 'bcrypt'
 
 gem 'faker'
 
+gem 'will_paginate'
+
+gem 'will_paginate-bootstrap-style'
+
 gem 'carrierwave', '~> 2.0'
 
 gem 'mini_magick'
