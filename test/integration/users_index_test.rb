@@ -29,5 +29,4 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     get users_url
     assert_select 'a', text: "удалить", count: 0 
   end  
-
 end
