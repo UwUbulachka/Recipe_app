@@ -1,11 +1,23 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+pie:
+  title: "Тыквенный пирог"
+  content: "Сделать тесто с добовлением тыквы, запекать 40мин"                
+  created_at: <%= 10.minutes.ago %>
+  user: sasha
 
-one:
-  title: MyString
-  content: MyText
-  user: one
+сocktail:
+  title: "Коктель"
+  content: "Взбить сливки, влить молоко и добавить ванилин"
+  created_at: <%= 3.years.ago %>
+  user: sasha
 
-two:
-  title: MyString
-  content: MyText
-  user: two
+tea:
+  title: "Чай"
+  content: "Заварите чай"
+  created_at: <%= 2.hours.ago %>
+  user: sasha
+
+omelet:
+  title: "Омлет"
+  content: "Взбейте яйца и добавте щипотку лимона"
+  created_at: <%= Time.zone.now %>
+  user: sasha
