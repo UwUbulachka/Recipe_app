@@ -208,8 +208,33 @@ hr {
     margin-top: 40px;
 }
 
-
 .form1 {
     margin-left: 40%;    
     margin-top:  40px;
 }
+
+.posts {
+  list-style: none;
+  padding: 0; 
+}
+
+.content {
+  display: block;
+  margin-left: 60px;
+}
+
+.timestamp {
+  color: gray;
+  display: block;
+  margin-left: 60px;
+}
+
+
+.indent7 {
+    margin-top: 70px;
+}
+
+.form2 {
+    margin-left: 7%;    
+}
+

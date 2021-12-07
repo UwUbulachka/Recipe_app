@@ -1,10 +1,18 @@
 <% provide(:title, @user.name )%>
-
 <div class="row">
-  <aside class="col-md-4 show1 size">
-      <h1>
-        <%= avatar_for @user, 100 %>
-        <%= @user.name %>
-      </h1>
-</aside>
+  <div class="col-sm-4 size2 indent6">
+    <h2>
+     <div class="form2"> <%= avatar_for @user, 100 %></div>
+      <%= @user.name %>
+    </h2>    
+  </div>
+  <div class="col-sm-8 size2 indent7">
+    <% if @user.posts.any? %>
+      <h2 class="">Рецепты (<%= @user.posts.count %>)</h2>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>    
+  </div>
 </div>
