@@ -21,3 +21,11 @@ omelet:
   content: "Взбейте яйца и добавте щипотку лимона"
   created_at: <%= Time.zone.now %>
   user: sasha
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  title: <%= Faker::Lorem.sentence(word_count:1) %>
+  content: <%= Faker::Lorem.sentence(word_count:5) %>
+  created_at: <%= 42.days.ago %>
+  user: sasha
+<% end %>
