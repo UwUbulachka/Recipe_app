@@ -29,3 +29,27 @@ micropost_<%= n %>:
   created_at: <%= 42.days.ago %>
   user: sasha
 <% end %>
+
+ice_cream:
+  title: "мороженное"
+  content: "Взбить сливки, добавить ванилин, и в морозилку"
+  created_at: <%= 2.years.ago %>
+  user: masha
+
+juice:
+  title: "Сок"
+  content: "Выжать сок"
+  created_at: <%= 3.days.ago %>
+  user: masha
+
+milk:
+  title: "Молоко"
+  content: "Подоить корову"
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+apple:
+  title: "Яблоко"
+  content: "Вырастить яблоню"
+  created_at: <%= 4.hours.ago %>
+  user: lana
