@@ -1,4 +1,4 @@
-User.create!(name: "Sasha Meuw", z
+User.create!(name: "Sasha Meuw", 
 			 email: "sasha@example.com",
 			 password: "foobar",
 			 password_confirmation: "foobar",
