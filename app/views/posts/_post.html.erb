@@ -1,7 +1,7 @@
 <li id="post-<%= post.id %>">
   <%= link_to avatar_for(post.user, 50), post.user %>
   <span class=" a1"><%= link_to post.user.name, post.user, class: "a1" %></span>
-  <h4 class="content"><%= post.title %></h4>
+  <h3 class="content"><%= post.title %></h3>
   <span class="content"><%= simple_format(post.content) %></span>
   <span class="timestamp">
     Опубликовано <%= time_ago_in_words(post.created_at) %> назад.

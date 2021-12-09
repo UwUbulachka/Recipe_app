@@ -40,6 +40,10 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  def feed
+    Post.where("user_id = ?", id)
+  end  
+
 private  
 
   def downcase_email
