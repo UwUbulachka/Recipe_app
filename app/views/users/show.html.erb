@@ -8,7 +8,8 @@
   </div>
   <div class="col-sm-8 size2 indent7">
     <% if @user.posts.any? %>
-      <h2 class="">Рецепты (<%= @user.posts.count %>)</h2>
+      <h2>Рецепты (<%= @user.posts.count %>)</h2>
+      <h4><%= link_to "Создать рецепт", new_post_path %></h4>
       <ol class="posts indent8">
         <%= render @posts %>
       </ol>

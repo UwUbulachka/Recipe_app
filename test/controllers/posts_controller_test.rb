@@ -6,6 +6,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     @post = posts(:pie)
   end 
 
+  test "should redirect new when not logged in" do 
+    assert_no_difference 'Post.count' do
+      get new_post_url(@post), params: {id: @post}
+    end
+    assert_redirected_to login_url  
+  end
+
   test "should redirect create when not logged in" do 
     assert_no_difference 'Post.count' do 
       post posts_url(@post), params: { post: { title: "Lorem ipsum", content: "Lorem ipsum"} }
