@@ -1,11 +1,18 @@
 <%= link_to avatar_for(post.user, 50), post.user %>
-<span ><%= link_to post.user.name, post.user, class: "" %></span>
+<span ><%= link_to post.user.name, post.user %></span>
 <h3 class="content"><%= post.title %></h3>
+  <span class="content">
+  <% post.pictures.each do |picture| %>
+    <%= image_tag picture.url %>
+  <% end %> 
+  </span>
 <span class="content"><%= simple_format(post.content) %></span>
+
 <span class="timestamp">
   Опубликовано <%= time_ago_in_words(post.created_at) %> назад.
   <% if current_user?(post.user) %> 
    | <%= link_to "удалить", post, class: "a1 a2", method: :delete, data: { confirm: "Вы уверены?" } %>
   <% end %> 
 </span> <hr/>
+
 

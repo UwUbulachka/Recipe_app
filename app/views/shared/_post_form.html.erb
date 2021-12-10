@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div>
   <%= f.text_field :title, placeholder: "Название рецепта",class: "indent8 size4" %>
@@ -6,5 +6,17 @@
   <div class="field">
   <%= f.text_area :content, placeholder: "Поделиться новым рецептом...", class: "size3" %>
   </div>
+  <span class="avatar">
+    <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
   <%= f.submit "Поделиться", class: "btn size", style: "background-color: #d4beb0;" %>
 <% end %>
+
+<script type="text/javascript">
+$('#post_pictures').bind('change', function() {
+  size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Максимальный размер файла - 5 МБ. Выберите файл меньшего размера.');
+    }
+  });
+</script>

@@ -12,6 +12,8 @@ gem 'faker'
 
 gem 'rails-i18n', '~> 6'
 
+gem 'carrierwave-i18n'
+
 gem 'will_paginate'
 
 gem 'will_paginate-bootstrap-style'
