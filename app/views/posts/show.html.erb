@@ -1,1 +1,16 @@
-<%= @post.title %>
+<%= provide(:title, @post.title) %>
+<h1 class="size1 form5"><%= @post.title %></h1><br>
+
+<div class="row size ">
+  <div class="col"></div>
+    <div class="col-md-8 ">
+    <%= image_tag @post.image.url, width: "870", height: "480"  if @post.image.url %><br>
+      <span>
+      <% @post.pictures.reverse_each do |picture| %>
+        <%= image_tag picture.url, class: "indent8 " %>
+      <% end %>
+      </span><br><br>
+      РЕЦЕПТ ПРИГОТОВЛЕНИЯ <%= simple_format(@post.content) %>
+  </div>
+  <div class="col"></div>
+</div>

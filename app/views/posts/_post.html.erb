@@ -3,7 +3,7 @@
 
   <div class="image_1 content">
      <div  class="image_2">
-        <%= image_tag post.image.url if post.image.url %>
+        <%= image_tag post.image.url, class: "img1" if post.image.url %>
      </div>
         <div>
            <h3><%= link_to post.title, post, class: "form4 a1 a2" %></h3>

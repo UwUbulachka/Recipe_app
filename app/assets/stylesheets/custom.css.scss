@@ -259,6 +259,7 @@ hr {
     margin-top:  40px;
 }
 
+ /* фото */
 
 .image_1 {    
   overflow: hidden;
@@ -272,3 +273,23 @@ hr {
     margin-left: 20px;    
 
 }
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
+
+.form5 {
+    margin-left: 230px;    
+
+}
+
+.img1 {
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+}
+
+.center { 
+  text-align: center; 
+  }
