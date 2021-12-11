@@ -1,13 +1,14 @@
-<%= link_to avatar_for(post.user, 50), post.user %>
+<%= link_to avatar_for(post.user, 50), post.user%>
 <span ><%= link_to post.user.name, post.user %></span>
-<h3 class="content"><%= post.title %></h3>
-  <span class="content">
-  <%= image_tag post.image.url if post.image.url %>
-  <% post.pictures.each do |picture| %>
-    <%= image_tag picture.url %>
-  <% end %> 
-  </span>
-<span class="content"><%= simple_format(post.content) %></span>
+
+  <div class="image_1 content">
+     <div  class="image_2">
+        <%= image_tag post.image.url if post.image.url %>
+     </div>
+        <div>
+           <h3><%= link_to post.title, post, class: "form4 a1 a2" %></h3>
+        </div>
+  </div>
 
 <span class="timestamp">
   Опубликовано <%= time_ago_in_words(post.created_at) %> назад.
@@ -15,5 +16,9 @@
    | <%= link_to "удалить", post, class: "a1 a2", method: :delete, data: { confirm: "Вы уверены?" } %>
   <% end %> 
 </span> <hr/>
+
+
+
+  
 
 
