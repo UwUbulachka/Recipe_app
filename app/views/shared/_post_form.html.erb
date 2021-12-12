@@ -6,9 +6,11 @@
   <div class="field">
   <%= f.text_area :content, placeholder: "Поделиться новым рецептом...", class: "size3" %>
   </div>
+  <h1 class="size">Добавить главное фото</h1>
   <span class="avatar">
     <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
+  </span><hr>
+  <h1 class="size">Добавить фото приготовления</h1>
   <span class="avatar">
     <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
