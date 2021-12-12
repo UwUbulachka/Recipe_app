@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :category
   default_scope -> { order(created_at: :desc) }
   mount_uploaders :pictures, PictureUploader
   serialize :pictures, JSON 
