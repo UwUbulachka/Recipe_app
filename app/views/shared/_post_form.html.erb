@@ -1,19 +1,30 @@
 <%= form_for(@post, html: { multipart: true }) do |f| %>
+  
   <%= render 'shared/error_messages', object: f.object %>
+  
   <div>
   <%= f.text_field :title, placeholder: "Название рецепта",class: "indent8 size4" %>
   </div>
+
   <div class="field">
   <%= f.text_area :content, placeholder: "Поделиться новым рецептом...", class: "size3" %>
   </div>
-  <h1 class="size">Добавить главное фото</h1>
+
+    <div class="field">
+    <%= f.label "Добавить категорию" %>
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name %>
+  </div><hr>
+
   <span class="avatar">
+    <%= f.label "Добавить главное фото" %>
     <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
   </span><hr>
-  <h1 class="size">Добавить фото приготовления</h1>
+
   <span class="avatar">
+    <%= f.label "Добавить фотогрфии приготовления" %>
     <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
+
   <%= f.submit "Поделиться", class: "btn size", style: "background-color: #d4beb0;" %>
 <% end %>
 

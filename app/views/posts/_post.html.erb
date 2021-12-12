@@ -2,12 +2,15 @@
 <span ><%= link_to post.user.name, post.user %></span>
 
   <div class="image_1 content">
-     <div  class="image_2">
-        <%= image_tag post.image.url, class: "img1" if post.image.url %>
-     </div>
-        <div>
-           <h3><%= link_to post.title, post, class: "form4 a1 a2" %></h3>
-        </div>
+    <div  class="image_2">
+      <%= image_tag post.image.url, class: "img1" if post.image.url %>
+    </div>
+    <div class="form4">
+      <h3><%= link_to post.title, post, class: "a1 a2" %></h3>
+    </div>
+    <div class="form4">
+      <h5 >Категория: <%= link_to post.category.try(:name), post.category, class: "a1 a2" %></h5>
+    </div>
   </div>
 
 <span class="timestamp">

@@ -1,0 +1,15 @@
+<div class="row size ">
+  <div class="col"></div>
+    <div class="col-md-6 ">
+      <%= form_for(@category) do |f|%>
+        
+       <%= render "shared/error_messages", object: f.object %>
+
+        <%= f.label "Имя" %>
+        <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.submit "Создать категорию", class: "btn size", style: "background-color: #d4beb0;" %>
+    <% end %>
+  </div>
+  <div class="col"></div>
+</div>

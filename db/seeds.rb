@@ -27,9 +27,3 @@ User.create!(name: "Masha UwU",
 			   password_confirmation: password)
 end
 
-users = User.order(:created_at).take(6) 
-50.times do
-	title = Faker::Lorem.sentence(word_count: 1)
-	content = Faker::Lorem.sentence(word_count: 30)	
-	users.each { |user| user.posts.create!(title: title, content: content) } #и создай для каждого польозвателя посты по 50 штук
-end

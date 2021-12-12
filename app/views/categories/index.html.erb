@@ -1,0 +1,29 @@
+<%= provide(:title, "Все категории") %>
+<div class="button_panel">
+ <%= link_to "Создать категорию", new_category_path, class: "btn btn-outline-primary btn-sm" %>
+ 
+</div>
+
+<section >
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Название</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each_with_index do |category, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= category.name %></td>
+          <td>
+            <%= link_to "Изменить", edit_category_path(category), class: "btn btn-outline-primary btn-sm" %>
+            <%= link_to "Удалить", category_path(category), method: :delete, data: {confirm: "Действительно удалить?"}, class: "btn btn-outline-danger btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody> 
+  </table>
+</section>
