@@ -1,17 +1,18 @@
 <%= provide(:title, @post.title) %>
-<h1 class="size1 form5"><%= @post.title %></h1><br>
 
 <div class="row size ">
   <div class="col"></div>
     <div class="col-md-8 ">
-    <%= image_tag @post.image.url, width: "870", height: "480"  if @post.image.url %><br>
+      <h1 class="size1 form5"><%= @post.title %></h1>
+      <h5>Категория: <%= link_to @post.category.try(:name), @post.category, class: "a1 a2" %></h5><hr><br>
+      <%= image_tag @post.image.url, width: "870", height: "480"  if @post.image.url %><br>
       <span>
-      <% @post.pictures.reverse_each do |picture| %>
-        <%= image_tag picture.url, class: "indent8 " %>
-      <% end %>
-      </span><br><br>
-      
-      РЕЦЕПТ ПРИГОТОВЛЕНИЯ <%= simple_format(@post.content) %>
-  </div>
+        <% @post.pictures.reverse_each do |picture| %>
+          <%= image_tag picture.url, class: "indent8" %>
+        <% end %>
+      </span><br><hr><br>   
+      <h3><mark>ПРИГОТОВЛЕНИЕ</mark></h3><br>
+        <%= simple_format(@post.content) %>
+    </div>
   <div class="col"></div>
 </div>

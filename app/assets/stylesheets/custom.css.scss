@@ -41,6 +41,10 @@ li:hover {color: black;}
      cursor:pointer;  
 }
 
+.a3 {
+    background-color: #d4beb0;
+  }
+
 /* подвал */
 
 footer {
@@ -278,9 +282,8 @@ hr {
   margin: 0 auto;
 }
 
-.form5 {
-    margin-left: 230px;    
-
+.form5 {   
+    margin-top: 30px;
 }
 
 .img1 {
@@ -292,3 +295,8 @@ hr {
 .center { 
   text-align: center; 
   }
+
+.indent9 {
+  margin-right: 200px;    
+  margin-top:  40px;
+}

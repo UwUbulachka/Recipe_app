@@ -13,7 +13,7 @@
     </div>
   </div>
 
-<span class="timestamp">
+<span class="timestamp ">
   Опубликовано <%= time_ago_in_words(post.created_at) %> назад.
   <% if current_user?(post.user) %> 
    | <%= link_to "удалить", post, class: "a1 a2", method: :delete, data: { confirm: "Вы уверены?" } %>

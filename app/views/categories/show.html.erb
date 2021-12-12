@@ -1,7 +1,11 @@
-<h1><%= @category.name %></h1>
+<% provide(:title, @category.name )%>
 
-<section id="posts">
-  <%= render @posts %>
-</section>
-
-<%= will_paginate @posts %>
+<div class="row size ">
+  <div class="col"></div>
+    <div class="col-md-8 posts intend7">
+      <h1 class="size1 form5"><%= @category.name %></h1><hr/>
+      <%= render @posts %>
+      <%= will_paginate @posts %>
+  </div>
+  <div class="col"></div>
+</div>
