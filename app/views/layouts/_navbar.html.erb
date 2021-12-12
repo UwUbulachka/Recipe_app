@@ -26,6 +26,9 @@
             <li class="indent5"><%= link_to "Выпечка",        category_path(10) %></li>
             <li class="indent5"><%= link_to "Десерты",        category_path(11) %></li>
             <li class="indent5"><%= link_to "Напитки",        category_path(12) %></li>
+            <% if current_user.try(:admin?) %>
+             <hr> <li class="indent5"><%= link_to "Добавить категорию", categories_path %></li>
+            <% end %>
         </div>
         <% if logged_in? %>
         <li class="nav-item">

@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  before_action :admin_user, only: [ :index, :new, :create, :edit, :update, :destroy]
   def index
   	@categories = Category.all
   end 
@@ -51,5 +51,9 @@ class CategoriesController < ApplicationController
   	
   	def  set_category
   	  @category = Category.find(params[:id])	
-  	end  	
+  	end 
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin? 
+    end  
 end
