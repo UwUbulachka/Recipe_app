@@ -4,8 +4,14 @@
   <div class="col"></div>
     <div class="col-md-8 ">
       <h1 class="size1 form5"><%= @post.title %></h1>
-      <h5>Категория: <%= link_to @post.category.try(:name), @post.category, class: "a1 a2" %></h5><hr><br>
-      <%= image_tag @post.image.url, width: "870", height: "480"  if @post.image.url %><br>
+      <h5>Категория: <%= link_to @post.category.try(:name), @post.category, class: "a1 a2" %></h5>   
+     <h5>
+      Время подготовки: <%= distance_of_time_in_words(@post.preparation_time, @post.preparation_time + @post.preparation_time.try(:strftime, ("%k")).to_i.hour + @post.preparation_time.try(:strftime, ("%M")).to_i.minute, false, only: [:minutes, :hours]) %>
+     </h5>
+     <h5>
+      Время готовки: <%= distance_of_time_in_words(@post.cooking_time, @post.cooking_time + @post.cooking_time.try(:strftime, ("%k")).to_i.hour + @post.cooking_time.try(:strftime, ("%M")).to_i.minute, false, only: [:minutes, :hours]) %>
+      </h5><hr><br>  
+        <%= image_tag @post.image.url, width: "870", height: "480"  if @post.image.url %><br>
       <span>
         <% @post.pictures.reverse_each do |picture| %>
           <%= image_tag picture.url, class: "indent8" %>

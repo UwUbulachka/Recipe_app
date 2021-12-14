@@ -2,30 +2,40 @@
   
   <%= render 'shared/error_messages', object: f.object %>
   
-  <div>
-  <%= f.text_field :title, placeholder: "Название рецепта",class: "indent8 size4" %>
-  </div>
-
-  <div class="field">
-  <%= f.text_area :content, placeholder: "Поделиться новым рецептом...", class: "size3" %>
-  </div>
+    <div>
+      <%= f.text_field :title, placeholder: "Название рецепта",class: "indent8 size4" %>
+    </div>
 
     <div class="field">
-    <%= f.label "Добавить категорию" %>
-    <%= f.collection_select :category_id, Category.order(:name), :id, :name %>
-  </div><hr>
+      <%= f.text_area :content, placeholder: "Поделиться новым рецептом...", class: "size3" %>
+    </div>
 
-  <span class="avatar">
-    <%= f.label "Добавить главное фото" %>
-    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-  </span><hr>
+    <div class="field">
+      <%= f.label "Время подготовки" %>
+      <%= f.time_field :preparation_time %>
+    </div>
 
-  <span class="avatar">
-    <%= f.label "Добавить фотогрфии приготовления" %>
-    <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
+    <div class="field">
+       <%= f.label "Время готовки" %>
+      <%= f.time_field :cooking_time %>
+    </div>
 
-  <%= f.submit "Поделиться", class: "btn size", style: "background-color: #d4beb0;" %>
+    <div class="field">
+      <%= f.label "Добавить категорию" %>
+      <%= f.collection_select :category_id, Category.order(:name), :id, :name %>
+    </div><hr>
+
+    <span class="avatar">
+        <%= f.label "Добавить главное фото" %>
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+    </span><hr>
+
+    <span class="avatar">
+        <%= f.label "Добавить фотогрфии приготовления" %>
+        <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+
+    <%= f.submit "Поделиться", class: "btn size", style: "background-color: #d4beb0;" %>
 <% end %>
 
 <script type="text/javascript">

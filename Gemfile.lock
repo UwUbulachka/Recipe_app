@@ -90,6 +90,9 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    dotiw (5.3.2)
+      activesupport
+      i18n
     erubi (1.10.0)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
@@ -255,6 +258,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave (~> 2.0)
   carrierwave-i18n
+  dotiw
   faker
   jbuilder (~> 2.7)
   listen (~> 3.3)
