@@ -27,3 +27,16 @@ User.create!(name: "Masha UwU",
 			   password_confirmation: password)
 end
 
+Category.create([ {name:	"Мясо"},          
+								  {name:	"Рыба"},      
+									{name:	"Овощи"},         
+									{name:	"Крупа"},        
+									{name:	"Закуски"},        
+									{name:	"Салаты"},        
+									{name:	"Завтраки"},        
+									{name:	"Супы"},           
+									{name:	"Вторые блюда"},   
+									{name:	"Выпечка"},        
+									{name:	"Десерты"},        
+									{name:	"Напитки"} ])
+
