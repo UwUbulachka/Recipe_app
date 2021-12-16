@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_14_151546) do
+ActiveRecord::Schema.define(version: 2021_12_16_190754) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "ing", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_ingredients_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -46,5 +54,6 @@ ActiveRecord::Schema.define(version: 2021_12_14_151546) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "ingredients", "posts"
   add_foreign_key "posts", "users"
 end
