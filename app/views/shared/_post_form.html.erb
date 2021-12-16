@@ -5,6 +5,15 @@
     <div>
       <%= f.text_field :title, placeholder: "Название рецепта",class: "indent8 size4" %>
     </div>
+     
+      <div>
+      <%= f.fields_for :ingredients do |t| %>
+        <%= render "ingredient_fields", :f => t %>
+      <% end %>
+       <div>
+        <%= link_to_add_association "Добавить", f, :ingredients %> <!-- (*) -->
+      </div>
+      </div>
 
     <div class="field">
       <%= f.text_area :content, placeholder: "Поделиться новым рецептом...", class: "size3" %>

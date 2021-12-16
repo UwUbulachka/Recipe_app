@@ -4,10 +4,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @ingredients = @post.ingredients
   end  
 
   def new
-    @post = current_user.posts.build 
+    @post = current_user.posts.new 
+    @ingredients = @post.ingredients.build
   end 
 
   def create
@@ -30,7 +32,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :content, {pictures: []}, :image, :category_id, :cooking_time, :preparation_time)
+      params.require(:post).permit(:title, :content, {pictures: []}, :image, :category_id, :cooking_time, :preparation_time, ingredients_attributes: [:id, :ing, :_destroy])
     end
 
     def correct_user
