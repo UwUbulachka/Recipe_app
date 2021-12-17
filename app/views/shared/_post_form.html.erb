@@ -2,23 +2,27 @@
   
   <%= render 'shared/error_messages', object: f.object %>
   
+    <br><h3><mark>Название рецепта</mark></h3>
     <div>
       <%= f.text_field :title, placeholder: "Название рецепта",class: "indent8 size4" %>
-    </div>
+    </div><br><hr><br>
      
-      <div>
-      <%= f.fields_for :ingredients do |t| %>
-        <%= render "ingredient_fields", :f => t %>
-      <% end %>
-       <div>
-        <%= link_to_add_association "Добавить", f, :ingredients %> <!-- (*) -->
-      </div>
-      </div>
+     <h3><mark>Ингредиенты</mark></h3>
+      <div class="form7">
+        <%= f.fields_for :ingredients do |t| %>
+          <%= render "ingredient_fields", :f => t %>
+        <% end %>
+         <div class="form7">
+          <%= link_to_add_association "Добавить", f, :ingredients, class: "a1 a2" %> <!-- (*) -->
+        </div>
+      </div><br><hr><br>
 
-    <div class="field">
+    <h3><mark>Приготовление</mark></h3>
+    <div class="field form8">
       <%= f.text_area :content, placeholder: "Поделиться новым рецептом...", class: "size3" %>
-    </div>
+    </div><br><hr><br>
 
+    <h3><mark>Время</mark></h3>
     <div class="field">
       <%= f.label "Время подготовки" %>
       <%= f.time_field :preparation_time %>
@@ -27,22 +31,22 @@
     <div class="field">
        <%= f.label "Время готовки" %>
       <%= f.time_field :cooking_time %>
-    </div>
+    </div><br><hr><br>
 
-    <div class="field">
-      <%= f.label "Добавить категорию" %>
+    <h3 ><mark>Добавить категорию</mark></h3>
+    <div class="field form8">
       <%= f.collection_select :category_id, Category.order(:name), :id, :name %>
-    </div><hr>
+    </div><br><hr><br>
 
+    <h3><mark>Добавить главное фото</mark></h3>
     <span class="avatar">
-        <%= f.label "Добавить главное фото" %>
-        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-    </span><hr>
+        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "form8" %>
+    </span><br><hr><br>
 
+    <h3><mark>Добавить фотогрфии приготовления</mark></h3>
     <span class="avatar">
-        <%= f.label "Добавить фотогрфии приготовления" %>
-        <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
-    </span>
+        <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png', class: "form8" %>
+    </span><br><br>
 
     <%= f.submit "Поделиться", class: "btn size", style: "background-color: #d4beb0;" %>
 <% end %>

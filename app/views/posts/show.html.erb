@@ -15,10 +15,11 @@
       <span>
         <% @post.pictures.reverse_each do |picture| %>
           <%= image_tag picture.url, class: "indent8" %>
+        <% end %><br><hr><br>
+        <h3><mark>ИНГРЕДИЕНТЫ</mark></h3><br>
+        <% @ingredients.each do |ingredient| %>
+          <li><%= ingredient.ing %></li>
         <% end %>
-      <% @ingredients.each do |ingredient| %>
-      <li><%= ingredient.ing %></li>
-      <% end %>
       </span><br><hr><br>   
       <h3><mark>ПРИГОТОВЛЕНИЕ</mark></h3><br>
         <%= simple_format(@post.content) %>
