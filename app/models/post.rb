@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   mount_uploaders :pictures, PictureUploader
   serialize :pictures, JSON 
   mount_uploader :image, ImageUploader
-  #validates :user_id, presence: true
+  validates :user_id, presence: true
   validates :title, presence: true, length: {maximum: 70}
   validates :content, presence: true, length: {maximum: 10000}
   validates :image, presence: true, if: ->(record) { record.image_integrity_error.blank? }
