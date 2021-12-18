@@ -24,12 +24,18 @@ module ApplicationHelper
       return @avatar_user
   end  
 
-  def hour_cooking
-    @post.try(:cooking_time).try(:strftime, ("%k"))
+  def cooking
+    @post.preparation_time + @post.preparation_time.try(:strftime, ("%k")).to_i.hour + @post.preparation_time.try(:strftime, ("%M")).to_i.minute  
+  end  
+ 
+
+  def cooking1
+    @post.cooking_time + @post.cooking_time.try(:strftime, ("%k")).to_i.hour + @post.cooking_time.try(:strftime, ("%M")).to_i.minute  
   end  
 
-  def minute_cooking
-    @post.try(:cooking_time).try(:strftime, ("%M"))
+  def cook
+    @post.try(:preparation_time).try(:strftime, ("%k")).to_i.hour + @post.preparation_time.try(:strftime, ("%M")).to_i.minute  
   end 
+
 
 end

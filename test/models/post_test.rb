@@ -4,7 +4,8 @@ class PostTest < ActiveSupport::TestCase
   
   def setup
     @user = users(:sasha)
-    @post = @user.posts.build(title: "lorem ipsum", content: "Lorem ipsum")
+    meat = Category.create(name: 'meat')
+    @post = @user.posts.build(title: "lorem ipsum", content: "Lorem ipsum", category: meat, image: File.open(Rails.root.join('app', 'assets', 'images', 'pizza.jpg')))
   end  
 
   test "should be valid" do 

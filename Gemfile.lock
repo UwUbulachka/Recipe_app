@@ -134,6 +134,7 @@ GEM
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
+    power_assert (2.0.1)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -218,6 +219,8 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     ssrf_filter (1.0.7)
+    test-unit (3.5.2)
+      power_assert
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -278,6 +281,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)
+  test-unit
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
