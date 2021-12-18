@@ -11,10 +11,10 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: {maximum: 70}
   validates :content, presence: true, length: {maximum: 10000}
   validates :image, presence: true, if: ->(record) { record.image_integrity_error.blank? }
-  #validates :cooking_time, presence: true
-  #validates :preparation_time, presence: true
-  #validate  :picture_size
-  #validate  :image_size
+  validates :cooking_time, presence: true
+  validates :preparation_time, presence: true
+  validate  :picture_size
+  validate  :image_size
 
   private
 

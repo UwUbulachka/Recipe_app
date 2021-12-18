@@ -73,7 +73,12 @@ class UserTest < ActiveSupport::TestCase
   test "associated microposts should be destroyed" do 
     @user.save
     meat = Category.create(name: 'meat')
-    @user.posts.create(title: "lorem ipsum", content: "Lorem ipsum", category: meat, image: File.open(Rails.root.join('app', 'assets', 'images', 'pizza.jpg')))
+    time = Time.now
+    @user.posts.create(title: "lorem ipsum", 
+                       content: "Lorem ipsum", 
+                       category: meat, 
+                       image: File.open(Rails.root.join('app', 'assets', 'images', 'pizza.jpg')),
+                       cooking_time: time, preparation_time: time)
     assert_difference 'Post.count', -1 do 
       @user.destroy
     end  
