@@ -82,6 +82,17 @@ class UserTest < ActiveSupport::TestCase
     assert_difference 'Post.count', -1 do 
       @user.destroy
     end  
+  end 
+
+  test "should follow and unfollow a user" do
+    sasha = users(:sasha)
+    masha = users(:masha)
+    assert_not sasha.following?(masha)
+    sasha.follow(masha)
+    assert sasha.following?(masha)
+    assert masha.followers.include?(sasha)
+    sasha.unfollow(masha)
+    assert_not sasha.following?(masha)
   end  
 end
 
