@@ -34,7 +34,7 @@ module ApplicationHelper
   end  
 
   def cook
-    @post.try(:preparation_time).try(:strftime, ("%k")).to_i.hour + @post.preparation_time.try(:strftime, ("%M")).to_i.minute  
+   # self.post.try(:preparation_time) +  self.post.try(:preparation_time).try(:strftime, ("%k")).to_i.hour + self.post.try(:preparation_time).try(:strftime, ("%M")).to_i.minute
   end 
 
 

@@ -8,7 +8,15 @@
     <div class="form4">
       <h3><%= link_to post.title, post, class: "a1 a2" %></h3>
     </div>
-
+    <div class="form4">
+      <h5 >Категория: <%= link_to post.category.try(:name), post.category, class: "a1 a2" %></h5>
+    </div>
+    <div class="form4">
+     <h5>Время подготовки: <%= distance_of_time_in_words(post.preparation_time, self.post.preparation_time + self.post.preparation_time.try(:strftime, ("%k")).to_i.hour + self.post.preparation_time.try(:strftime, ("%M")).to_i.minute, false, only: [:minutes, :hours]) %></h5>
+    </div>    
+    <div class="form4">
+     <h5>Время готовки: <%= distance_of_time_in_words(post.cooking_time, self.post.cooking_time + self.post.cooking_time.try(:strftime, ("%k")).to_i.hour + self.post.cooking_time.try(:strftime, ("%M")).to_i.minute, false, only: [:minutes, :hours]) %></h5>
+    </div>
   </div>
 
 <span class="timestamp ">
