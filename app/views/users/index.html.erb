@@ -5,13 +5,7 @@
   <div class="col"></div>
     <div class="col-md-6 ">
     <ul>
-      <% @users.each do |user|  %>
-        <%= avatar_for user, 80%>
-        <%= link_to user.name, user, class: "a1" %>
-        <% if current_user.admin? && !current_user?(user)%>
-        | <%= link_to "удалить", user, method: :delete, data: {confirm: "Действительно удалить?"}  %>
-        <% end %><br/><hr/>
-      <% end %>
+      <%= render @users %>
     </ul>
     <%= will_paginate %>
   </div>

@@ -4,7 +4,10 @@
     <h2>
      <div class="form2"> <%= avatar_for @user, 100 %></div>
       <%= @user.name %>
-    </h2>    
+    </h2>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>    
   </div>
   <div class="col-sm-8 size indent7">
     <% if @user.posts.any? %>

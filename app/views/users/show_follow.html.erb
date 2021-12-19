@@ -1,0 +1,32 @@
+<% provide(:title, @title) %>
+<div class="row size2">
+  <aside class="col-md-3">
+    <section class="user_info">
+      <h2>
+      <br><div class="form2"> <%= avatar_for @user, 100 %></div>
+        <%= @user.name %>
+      </h2>
+      <span><%= link_to "посмотреть мой профиль", @user %></span><br>
+    </section>
+    <div class="line"></div>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to avatar_for(user, 20), user %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="col-md-9">
+   <br><br><h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>
