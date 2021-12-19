@@ -1,0 +1,15 @@
+one:
+  follower: sasha
+  followed: lana
+
+two:
+  follower: sasha
+  followed: mallory
+
+three:
+  follower: lana
+  followed: sasha
+
+four:
+  follower: masha
+  followed: sasha
