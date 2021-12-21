@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
   def home
+     @posts = Post.includes(:user)
   end
 
   def my_feed
-   @feed_items = current_user.feed.paginate(page: params[:page], per_page: 15) if logged_in?
+   @feed_items = current_user.feed.paginate(page: params[:page])
   end  
 
   def about
