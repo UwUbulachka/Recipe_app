@@ -13,7 +13,13 @@ Rails.application.routes.draw do
       get :following, :followers
     end  
   end
-  resources :posts
+  
+  resources :posts do
+    collection do
+      get 'search'
+    end
+  end
+  
   resources :categories
   resources :relationships, only: [:create, :destroy]
 

@@ -16,6 +16,14 @@ class Post < ApplicationRecord
   validate  :picture_size
   validate  :image_size
 
+ def self.search(search)
+    if search !=""    
+      Post.where('title LIKE(?)', "%#{search.capitalize}%")
+    else
+      Post.all
+    end
+  end
+
   private
 
   def picture_size

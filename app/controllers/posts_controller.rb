@@ -2,6 +2,11 @@ class PostsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :destroy] 
   before_action :correct_user, only: :destroy
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+  
+
   def show
     @post = Post.find(params[:id])
     @ingredients = @post.ingredients
