@@ -284,6 +284,7 @@ DEPENDENCIES
   listen (~> 3.3)
   mini_backtrace
   mini_magick
+  minitest
   minitest-reporters
   pg
   puma (~> 5.0)

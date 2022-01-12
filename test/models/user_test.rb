@@ -101,13 +101,13 @@ class UserTest < ActiveSupport::TestCase
     sasha = users(:sasha)
     masha = users(:masha)
     lana  = users(:lana)
-    lana.microposts.each do |post_following|
+    lana.posts.each do |post_following|
       assert sasha.feed.include?(post_following)
     end
-    sasha.microposts.each do |post_self|
+    sasha.posts.each do |post_self|
       assert sasha.feed.include?(post_self)
     end
-    masha.microposts.each do |post_unfollowed|
+    masha.posts.each do |post_unfollowed|
       assert_not sasha.feed.include?(post_unfollowed)
     end
   end
