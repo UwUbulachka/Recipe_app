@@ -45,13 +45,11 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'byebug'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-end
-
-group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -62,7 +60,6 @@ group :development do
 end
 
 group :test do
-  gem 'byebug'
   gem 'capybara', '>= 3.26'
   gem 'mini_backtrace'
   gem 'minitest-reporters'
