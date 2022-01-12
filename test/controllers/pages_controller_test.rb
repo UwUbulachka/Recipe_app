@@ -1,25 +1,27 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
-  def setup 
-    @title = "Вкусные рецепты"
-  end  
+  def setup
+    @title = 'Вкусные рецепты'
+  end
 
-  test "should get home" do
+  test 'should get home' do
     get root_path
     assert_response :success
-    assert_select "title", "Вкусные рецепты"
+    assert_select 'title', 'Вкусные рецепты'
   end
 
-  test "should get about" do
+  test 'should get about' do
     get about_url
     assert_response :success
-    assert_select "title", "О сайте | #{@title}"
+    assert_select 'title', "О сайте | #{@title}"
   end
 
-  test "should get contact" do
+  test 'should get contact' do
     get contact_url
     assert_response :success
-    assert_select "title", "Контакты | #{@title}"
+    assert_select 'title', "Контакты | #{@title}"
   end
 end

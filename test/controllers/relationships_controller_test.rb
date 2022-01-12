@@ -1,19 +1,20 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class RelationshipsControllerTest < ActionDispatch::IntegrationTest
-  
-  test "create should require logged-in user" do 
+  test 'create should require logged-in user' do
     assert_no_difference 'Relationship.count' do
       post relationships_path
-    end 
+    end
     assert_redirected_to login_url
-  end  
+  end
 
-  test "destroy should require logged-in user" do 
+  test 'destroy should require logged-in user' do
     relationship = relationships(:one)
-    assert_no_difference 'Relationship.count' do 
-      delete relationship_path(relationship), params: {id: relationship}
-    end 
-  assert_redirected_to login_url
-  end 
+    assert_no_difference 'Relationship.count' do
+      delete relationship_path(relationship), params: { id: relationship }
+    end
+    assert_redirected_to login_url
+  end
 end

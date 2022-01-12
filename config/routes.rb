@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root             'pages#home'
   get 'about'   => 'pages#about'
@@ -5,22 +7,21 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
   get 'signup'  => 'users#new'
   get 'login'   => 'sessions#new'
-  post 'login'   => 'sessions#create'
+  post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  
-  resources :users do 
-    member do 
+
+  resources :users do
+    member do
       get :following, :followers
-    end  
+    end
   end
-  
+
   resources :posts do
     collection do
       get 'search'
     end
   end
-  
-  resources :categories
-  resources :relationships, only: [:create, :destroy]
 
+  resources :categories
+  resources :relationships, only: %i[create destroy]
 end

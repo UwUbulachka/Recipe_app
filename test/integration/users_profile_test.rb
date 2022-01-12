@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class UsersProfileTest < ActionDispatch::IntegrationTest
   include ApplicationHelper
@@ -7,7 +9,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     @user = users(:sasha)
   end
 
-  test "Profile" do
+  test 'Profile' do
     get user_path(@user)
     assert_select 'title', full_title(@user.name)
     assert_select 'h2', text: @user.name
@@ -16,6 +18,6 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'ul.pagination'
     @user.posts.paginate(page: 1, per_page: 10).each do |post|
       assert_match post.title, response.body
-    end  
+    end
   end
 end
